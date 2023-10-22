@@ -33,11 +33,12 @@ jobs:
           args: cargo build --target $BUILD_TARGET --release
       - name: Gzip Binary
         run: |
-          gzip target/x86_64-unknown-linux-musl/release/fastn-package-proxy
+          cp target/x86_64-unknown-linux-musl/release/fastn-package-proxy .
+          gzip fastn-package-proxy
       - uses: actions/upload-artifact@v2
         with:
           name: linux_musl_x86_64
-          path: target/x86_64-unknown-linux-musl/release/fastn-package-proxy.gz
+          path: fastn-package-proxy.gz
 
   create-release:
     name: Create github tag and release
