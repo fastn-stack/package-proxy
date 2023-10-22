@@ -1,9 +1,7 @@
 [package]
 name = "fastn-package-proxy"
-version = "0.1.0"
-authors = [
-    "Amit Upadhyay <upadhyay@gmail.com>",
-]
+version = "0.1.1"
+authors = ["Amit Upadhyay <upadhyay@gmail.com>"]
 edition = "2021"
 description = "fastn-package-proxy is a proxy server for fastn packages."
 license = "BSD-3-Clause"
