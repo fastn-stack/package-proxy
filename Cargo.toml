@@ -1,0 +1,16 @@
+[package]
+name = "fastn-package-proxy"
+version = "0.1.0"
+authors = [
+    "Amit Upadhyay <upadhyay@gmail.com>",
+]
+edition = "2021"
+description = "fastn-package-proxy is a proxy server for fastn packages."
+license = "BSD-3-Clause"
+repository = "https://github.com/fastn-stack/package-proxy"
+homepage = "https://fastn.com/package-proxy/"
+
+[dependencies]
+actix-web = "4.4"
+serde = { version = "1", features = ["derive"] }
+reqwest = "0.11"

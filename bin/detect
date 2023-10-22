@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "fastn-package-proxy Package"
+exit 0

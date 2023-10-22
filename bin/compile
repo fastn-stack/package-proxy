@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+echo "-----> Installing FASTN-PACKAGE-PROXY"
+
+# change to the the BUILD_DIR ($1)
+cd "$1" || exit
+
+mkdir -p vendor/fastn/bin
+
+URL="https://github.com/fastn-stack/package-proxy/releases/latest/download/fastn-package-proxy"
+curl -L -o vendor/fastn/bin/fastn-package-proxy $URL
+
+chmod +x vendor/fastn/bin/fastn-package-proxy

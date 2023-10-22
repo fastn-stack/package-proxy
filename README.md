@@ -1,2 +1,3 @@
 # package-proxy
-HTTP proxy to download fastn package in case github is unreachable
+
+HTTP proxy to download fastn package in case github is unreachable.
