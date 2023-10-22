@@ -7,7 +7,7 @@ cd "$1" || exit
 
 mkdir -p vendor/fastn/bin
 
-URL="https://github.com/fastn-stack/package-proxy/releases/latest/download/fastn-package-proxy"
-curl -L -o vendor/fastn/bin/fastn-package-proxy $URL
+URL="https://github.com/fastn-stack/package-proxy/releases/latest/download/fastn-package-proxy.gz"
+curl -L  $URL | gunzip -c > vendor/fastn/bin/fastn-package-proxy
 
 chmod +x vendor/fastn/bin/fastn-package-proxy

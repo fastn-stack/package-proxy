@@ -31,10 +31,13 @@ jobs:
         continue-on-error: false
         with:
           args: cargo build --target $BUILD_TARGET --release
+      - name: Gzip Binary
+        run: |
+          gzip target/x86_64-unknown-linux-musl/release/fastn-package-proxy
       - uses: actions/upload-artifact@v2
         with:
           name: linux_musl_x86_64
-          path: target/x86_64-unknown-linux-musl/release/fastn-package-proxy
+          path: target/x86_64-unknown-linux-musl/release/fastn-package-proxy.gz
 
   create-release:
     name: Create github tag and release
@@ -48,7 +51,7 @@ jobs:
           path: ~/download
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "~/download/fastn-package-proxy"
+          artifacts: "~/download/fastn-package-proxy.gz"
           generateReleaseNotes: true
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.event.inputs.releaseTag }}
